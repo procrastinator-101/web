@@ -1,0 +1,46 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>html forms example</title>
+    </head>
+    <body>
+        <h1>welcome to our page</h1>
+        <!--
+            form
+                action = where to send the information
+                method = http request method
+            
+            input
+                type = type of the input
+                name = variable name of the input
+                value = default value of the variable name
+                required :  this attribute could be added to the input element so letting the field empty
+                            would not validate the request
+                pattern :   this attribute may be used for browsers that don't support date support to ensure
+                            input date respects the date standard format yyyy-mm-dd
+
+                date:
+                    -   if (min > max) then no date is accepted
+                    -   if (min or max are not in the form yyyy-mm-dd) then they are discarded
+                    -   step is represented in days. it starts from min or value if set, 
+                        otherwise a default value is used (usually today)
+
+            label
+                for : gets the id of the input element to label. it displays text inside it.
+        -->
+        <form action="first_page.html" method="POST">
+            <input type="text" name="username" value="username" id="ft_user">
+        </form>
+        <form action="first_page.html" method="POST">
+            <label for="ft_user">Username</label>
+            <input type="password" name="password" required>
+        </form>
+        <form action="first_page.html" method="POST">
+            <input type="date" name="date" value="2020-02-23" min="2020-01-01" step="any" required>
+        </form>
+        <hr>
+        <form action="first_page.html" method="POST">
+            <input type="range" name="grade" value="50" min="0" max="100" step="1">
+        </form>
+    </body>
+</html>
